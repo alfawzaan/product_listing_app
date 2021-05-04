@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "498877522063",
+    "firebase_url": "https://andriodsimplechat-5a099.firebaseio.com",
+    "project_id": "andriodsimplechat-5a099",
+    "storage_bucket": "andriodsimplechat-5a099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498877522063:android:5fb5345c7b90da12",
+        "android_client_info": {
+          "package_name": "com.example.user.andriodsimplechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498877522063-qkrarqpihdclt7kcp9hfv9puj9sle7d8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.andriodsimplechat",
+            "certificate_hash": "2b77e6219369e617ab39de3897a79347aa89dfae"
+          }
+        },
+        {
+          "client_id": "498877522063-qkut4klp35tf1cdnterkgchr3778lgkp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.andriodsimplechat",
+            "certificate_hash": "63151f80ac1487aa56c987a745446ed869808fe7"
+          }
+        },
+        {
+          "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbJ2wLvq5A_a4dsBXhzf325z2BqNwom0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498877522063:android:9b537403cc3f9ff9",
+        "android_client_info": {
+          "package_name": "com.example.user.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498877522063-9ls8v3kn1g86ht2t53lquo65v8gt0194.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.myapplication",
+            "certificate_hash": "63151f80ac1487aa56c987a745446ed869808fe7"
+          }
+        },
+        {
+          "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbJ2wLvq5A_a4dsBXhzf325z2BqNwom0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498877522063:android:27564758842cd351ca50fa",
+        "android_client_info": {
+          "package_name": "com.fawzaan.product_listing_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbJ2wLvq5A_a4dsBXhzf325z2BqNwom0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:498877522063:android:5ed069b16176c825ca50fa",
+        "android_client_info": {
+          "package_name": "com.fawzaan.socialmedialogins"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "498877522063-b1bt687b6ci686h4588hi9ahpu6l6p3t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fawzaan.socialmedialogins",
+            "certificate_hash": "1edd3c1b838c29052db1c40f05b5fa764e380475"
+          }
+        },
+        {
+          "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbJ2wLvq5A_a4dsBXhzf325z2BqNwom0M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "498877522063-iep07q5ducq831992b44o0b3f9akgh75.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
