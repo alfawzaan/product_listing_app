@@ -45,7 +45,6 @@ class ProductPageState extends State<ProductPage> {
   void doGetList() async{
      productListBloc.subject.stream.drain();
     productListBloc.getProductList(widget.catName);
-
   }
 
   Widget buildProductList(BuildContext context) {
