@@ -21,6 +21,7 @@ class ProductPage extends StatefulWidget {
 
 class ProductPageState extends State<ProductPage> {
   ProductListBloc productListBloc = ProductListBloc();
+  SliverGridDelegate gridDelegate;
 
   @override
   void initState() {
@@ -32,7 +33,7 @@ class ProductPageState extends State<ProductPage> {
   }
 
   @override
-  Widget build(BuildContext context)  {
+  Widget build(BuildContext context) {
     doGetList();
     return Scaffold(
       appBar: AppBar(
@@ -42,8 +43,8 @@ class ProductPageState extends State<ProductPage> {
     );
   }
 
-  void doGetList() async{
-     productListBloc.subject.stream.drain();
+  void doGetList() async {
+    productListBloc.subject.stream.drain();
     productListBloc.getProductList(widget.catName);
   }
 
@@ -73,19 +74,35 @@ class ProductPageState extends State<ProductPage> {
 
   //BUILD PRODUCT LIST FROM THE STREAM DATA
   productListBuildComposer(ProductListResponse productResponse) {
+    gridDelegate = SliverGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: 400);
     List<ProductModel> products = productResponse.productList;
     if (products.length == 0) {
       return Text("Sorry! no product entry at the moment");
     } else {
-      return ListView.builder(
-        shrinkWrap: true,
+      return (isLargeScreen(context) || isMediumScreen(context))
+          ? GridView.builder(
         itemCount: products == null ? 0 : products.length,
-        itemBuilder: (context, index) {
-          var product = products[index];
-          return customDeco(productBuildComposer(product), Colors.white70,
-              getWidth(context, ratio: isLargeScreen(context) ? 0.02 : .1));
-        },
-      );
+              gridDelegate: gridDelegate,
+              itemBuilder: (context, index) {
+                var product = products[index];
+                return customDeco(
+                    productBuildComposer(product),
+                    Colors.white70,
+                    getWidth(context,
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.02 : .1));
+              })
+          : ListView.builder(
+              shrinkWrap: true,
+              itemCount: products == null ? 0 : products.length,
+              itemBuilder: (context, index) {
+                var product = products[index];
+                return customDeco(
+                    productBuildComposer(product),
+                    Colors.white70,
+                    getWidth(context,
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.02 : .1));
+              },
+            );
     }
   }
 
@@ -94,9 +111,9 @@ class ProductPageState extends State<ProductPage> {
     return Container(
       padding: EdgeInsets.symmetric(
           horizontal:
-              getWidth(context, ratio: isLargeScreen(context) ? 0.02 : 0.04),
+              getWidth(context, ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.02 : 0.04),
           vertical:
-              getWidth(context, ratio: isLargeScreen(context) ? 0.02 : 0.03)),
+              getWidth(context, ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.02 : 0.03)),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         mainAxisSize: MainAxisSize.max,
@@ -105,8 +122,8 @@ class ProductPageState extends State<ProductPage> {
             imageUrl: product.image,
             placeholder: (context, url) => Text("Loading..."),
             errorWidget: (context, url, error) => Icon(Icons.error),
-            width: getWidth(context, ratio: isLargeScreen(context) ? 0.4 : 0.9),
-            height: getHeight(context, ratio: 0.3),
+            width: getWidth(context, ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.4 : 0.9),
+            height: getHeight(context, ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.25 : 0.3),
             fit: BoxFit.cover,
           ),
 /*
@@ -122,7 +139,7 @@ class ProductPageState extends State<ProductPage> {
             softWrap: true,
             style: TextStyle(
                 fontSize: getWidth(context,
-                    ratio: isLargeScreen(context) ? 0.01 : .05),
+                    ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : .05),
                 fontWeight: FontWeight.bold),
           ),
           Row(
@@ -132,7 +149,7 @@ class ProductPageState extends State<ProductPage> {
                 softWrap: true,
                 style: TextStyle(
                     fontSize: getWidth(context,
-                        ratio: isLargeScreen(context) ? 0.01 : .05),
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : .05),
                     fontWeight: FontWeight.bold),
               ),
               Expanded(
@@ -141,7 +158,7 @@ class ProductPageState extends State<ProductPage> {
                 softWrap: true,
                 style: TextStyle(
                     fontSize: getWidth(context,
-                        ratio: isLargeScreen(context) ? 0.01 : .05)),
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : .05)),
               ))
             ],
           ),
@@ -152,7 +169,7 @@ class ProductPageState extends State<ProductPage> {
                 softWrap: true,
                 style: TextStyle(
                     fontSize: getWidth(context,
-                        ratio: isLargeScreen(context) ? 0.01 : .05),
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : .05),
                     fontWeight: FontWeight.bold),
               ),
               Expanded(
@@ -161,7 +178,7 @@ class ProductPageState extends State<ProductPage> {
                 softWrap: true,
                 style: TextStyle(
                     fontSize: getWidth(context,
-                        ratio: isLargeScreen(context) ? 0.01 : .05)),
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : .05)),
               ))
             ],
           ),

@@ -76,7 +76,7 @@ class HomePageScreenState extends State<HomePageScreen> {
                                 color: Colors.black,
                                 fontSize: getWidth(context,
                                     ratio:
-                                        isLargeScreen(context) ? 0.01 : 0.04))),
+                                    (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : 0.04))),
                         onTap: () {
                           setState(() {
                             showForm = true;
@@ -95,7 +95,7 @@ class HomePageScreenState extends State<HomePageScreen> {
                                 color: Colors.black,
                                 fontSize: getWidth(context,
                                     ratio:
-                                        isLargeScreen(context) ? 0.01 : 0.04))),
+                                    (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : 0.04))),
                         onTap: () {
                           setState(() {
                             showForm = true;
@@ -115,7 +115,7 @@ class HomePageScreenState extends State<HomePageScreen> {
                           style: TextStyle(
                               color: Colors.black,
                               fontSize: getWidth(context,
-                                  ratio: isLargeScreen(context) ? 0.01 : 0.04)),
+                                  ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.01 : 0.04)),
                         ),
                         onTap: () {
                           setState(() {
@@ -143,11 +143,11 @@ class HomePageScreenState extends State<HomePageScreen> {
         Row(
           children: [
             SizedBox(
-              width: isLargeScreen(context)
+              width: (isLargeScreen(context) || isMediumScreen(context))
                   ? getWidth(context, ratio: 0.3)
                   : getWidth(context),
               child: CategoryPage((category) {
-                if (!isLargeScreen(context)) {
+                if (!isLargeScreen(context) && !isMediumScreen(context)) {
                   debugPrint("Loading Small Screen");
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return ProductPage(category.catId, category.catName);
@@ -161,7 +161,7 @@ class HomePageScreenState extends State<HomePageScreen> {
               }),
             ),
             Expanded(
-                child: (isLargeScreen(context) && catName != "")
+                child: ((isLargeScreen(context) || isMediumScreen(context)) && catName != "")
                     ? ProductPage(catId, catName)
                     : Container())
           ],
@@ -170,7 +170,7 @@ class HomePageScreenState extends State<HomePageScreen> {
             ? Center(
                 child: SizedBox(
                     width: getWidth(context,
-                        ratio: isLargeScreen(context) ? 0.4 : 1),
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.4 : 1),
                     child: loginRegBuildComposer()))
             : Container()
       ],
@@ -188,7 +188,7 @@ class HomePageScreenState extends State<HomePageScreen> {
               child: customDeco(
                   SizedBox(
                     width: getWidth(context,
-                        ratio: isLargeScreen(context) ? 0.03 : 0.08),
+                        ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.03 : 0.08),
                     child: InkWell(
                         child: Icon(Icons.close),
                         onTap: () {
@@ -227,7 +227,7 @@ class HomePageScreenState extends State<HomePageScreen> {
                     style: TextStyle(
                         color: Colors.blueAccent,
                         fontSize: getWidth(context,
-                            ratio: isLargeScreen(context) ? 0.015 : 0.05)),
+                            ratio: (isLargeScreen(context) || isMediumScreen(context)) ? 0.015 : 0.05)),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () {
                         setState(() {

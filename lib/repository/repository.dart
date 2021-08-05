@@ -1,7 +1,8 @@
 import 'dart:io';
+// import 'dart:html';
 
-import 'package:image_picker_web_redux/image_picker_web_redux.dart';
-import 'package:product_listing_app/web_specific_lib.dart';
+import 'package:image_picker_web_redux/image_picker_web_redux.dart'; //comment out this import for mobile
+// import 'package:product_listing_app/web_specific_lib.dart';
 import 'package:universal_html/html.dart' as html;
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -187,6 +188,7 @@ For Testing
     return imageUrl;
   }
 
+//comment out this method for mobile
   Future<List<String>> doWebUpload() async {
     List<String> imageUrl = [];
 
