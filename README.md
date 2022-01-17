@@ -2,6 +2,7 @@
 
 A new Flutter application.
 
+This project demonstrate implementation of a web app using flutter and it also highlighted how to make it responsive
 ## Getting Started
 
 This project is a starting point for a Flutter application.
